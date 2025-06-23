@@ -1,0 +1,49 @@
+Basic Docker Commands
+1. Docker Version & Info
+docker --version         # Show Docker version
+docker info              # Show system-wide information
+
+2. Docker Images
+docker pull <image-name>         # Download image from Docker Hub
+docker images                    # List all downloaded images
+docker rmi <image-id or name>   # Remove image
+
+3. Docker Containers
+docker run <image-name>                   # Run container (default foreground)
+docker run -d <image-name>                # Run container in background (detached)
+docker run -it <image-name> /bin/bash     # Run with interactive shell
+docker ps                                 # List running containers
+docker ps -a                              # List all containers (including stopped)
+docker stop <container-id>                # Stop container
+docker start <container-id>               # Start stopped container
+docker restart <container-id>             # Restart container
+docker rm <container-id>                  # Remove container
+
+4. Container Logs & Exec
+docker logs <container-id>               # Show container logs
+docker exec -it <container-id> bash      # Access running container shell
+
+5. Docker Networks
+docker network ls                          # List networks
+docker network create <network-name>       # Create a custom network
+docker network rm <network-name>           # Remove network
+
+6. Docker Volumes
+docker volume ls                         # List volumes
+docker volume create <volume-name>       # Create volume
+docker volume rm <volume-name>           # Remove volume
+
+7. Docker Compose (if installed)
+docker-compose up                        # Start services from docker-compose.yml
+docker-compose down                      # Stop and remove containers, networks, etc.
+
+setup grid for selenium/selenium-hub
+
+docker network create grid
+
+
+
+docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub -e SE_EVENT_BUS_PUBLISH_PORT=4442 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 selenium/node-chrome
+
+docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub -e SE_EVENT_BUS_PUBLISH_PORT=4442 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 selenium/node-firefox
+

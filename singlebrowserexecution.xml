@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+
+  <listeners>
+    <listener class-name="utitlites.implementListeners"/>
+  </listeners>
+
+
+  <test thread-count="5" name="chromeTest">
+    <parameter name="os" value="windows"></parameter>
+    <parameter name="browser" value="chrome"></parameter>
+    <classes>
+   <!-- <class name="testCases.Tc001_login"/>-->
+     <!-- <class name="testCases.loginddt"/> -->
+     <class name="testCases.DashBoard_testcase001"/>
+    </classes>
+  </test> <!-- Test -->
+</suite>
